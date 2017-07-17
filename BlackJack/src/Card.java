@@ -19,6 +19,7 @@ public class Card {
 		this.image = setImage(r,s);
 		this.setValue();
 	}
+	
 	/*
 	 * Set the image (png type) associated to a card
      * @param	String r:	rank
