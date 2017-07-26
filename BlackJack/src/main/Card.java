@@ -4,6 +4,8 @@
  * @since	1.0
  */
 
+package main;
+
 import java.io.File;
 
 public class Card {
