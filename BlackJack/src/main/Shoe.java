@@ -1,11 +1,16 @@
-import java.util.ArrayList;
-import java.util.Random;
-
 /*
  * @author	Quan Q. Phan
  * @date	5/26/2017
  * @since	1.0
  */
+
+package main;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Random;
+import java.util.Set;
 
 public class Shoe {
 
@@ -143,4 +148,5 @@ public class Shoe {
 		this.cardList.clear();
 		this.cardList.addAll(cutCardInsertedList);
 	}
+	
 }

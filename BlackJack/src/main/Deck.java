@@ -4,6 +4,8 @@
  * @since	1.0
  */
 
+package main;
+
 import java.util.ArrayList;
 
 public class Deck {
@@ -16,7 +18,6 @@ public class Deck {
 	 * Constructor.
 	 * Loop through the two arrays to initialize 52 cards in a deck
 	 */
-	
 	public Deck(){
 		
 		for(int rank = 0; rank < ranks.length; rank++){
@@ -36,5 +37,22 @@ public class Deck {
 	 */
 	public ArrayList<Card> getDeck(){
 		return this.deck;
+	}
+	
+	/*
+	 * Show all cards in a shoe
+	 * This method is for Testing purpose
+     */
+	public void showAllCardsFaceUp(){
+		
+		for(int card = 0; card < this.deck.size(); card++){
+			
+			System.out.print(" ".concat(this.deck.get(card).getRank().concat(
+					this.deck.get(card).getSuit())));
+			
+			if((card + 1) % 13 == 0){
+				System.out.println("");
+			}
+		}
 	}
 }
