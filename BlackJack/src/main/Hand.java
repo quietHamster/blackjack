@@ -14,6 +14,7 @@ public class Hand {
 	private boolean isBusted = false;
 	private boolean isDealer = false;
 	private int value = 0;
+	private boolean hasBlackJack = false;
 	
 	/*
 	 * Constructor.
@@ -38,44 +39,49 @@ public class Hand {
      */
 	public void receiveCard(Card card){
 		
+		card.setOrderInHand(this.cardList.size()+1);
+		
 		this.cardList.add(card);
 		
-		// set the hand value
-		int sum = 0;
+		this.value = 0; // reset the value before increment
 		
-		if(!this.hasAce()){
+		for(Card c : this.cardList){
 			
-			for(Card c : this.cardList){ // card order is not important here
-				
-				sum += c.getValue();
-				
-			}
+			this.value += c.getValue();
 			
-		} else {
-			
-			for(int c = 0; c < this.cardList.size(); c++){ // card order is important here
-				
-				sum += this.cardList.get(c).getValue();
-				
-				if(this.cardList.get(c).getValue() == 1){
-					
-					if(sum > 21){ // set the SOFT/HARD Ace card
-						
-						sum -= 10;
-						
-					}
-				}
-			}
 		}
 		
-		this.value = sum;
+		if(this.isDealer){ // Dealer Hand
+			
+			
+			// TODO 
+			
+		} else { // Player Hand
+			
+			
+			if(card.getOrderInHand() == 2 &&  // the second card in hand
+					this.value == 21){
+				
+				this.hasBlackJack = true;
+				
+			} 
+			
+			
+		}
+		
+		
+
+		
+
 		
 		// check if the hand is busted
+		
 		if(this.value > 21){
 			
 			this.isBusted = true;
 			
 		}
+		
 	}
 	
 	/*
@@ -99,6 +105,16 @@ public class Hand {
 	}
 	
 	/*
+	 * Get value if the hand has BlackJack or not
+     * @return	boolean hasBlackJack
+     */
+	public boolean isBlackJack(){
+		
+		return this.hasBlackJack;
+		
+	}
+	
+	/*
 	 * Check if the hand is Dealer's hand
      * @return	boolean isDealer:	TRUE/FALSE
      */
@@ -109,10 +125,10 @@ public class Hand {
 	}
 	
 	/*
-	 * Check if the hand has Ace card or not 
+	 * Check if the hand has at least one Ace card or not 
      * @return	boolean	TRUE/FALSE
      */
-	private boolean hasAce(){
+	private boolean hasAtLeastOneAce(){
 		
 		for(Card c : this.cardList){
 			
@@ -135,21 +151,6 @@ public class Hand {
 		
 		if(this.cardList.get(0).getValue() == 10 || 
 		   this.cardList.get(0).getValue() == 11){
-			
-			return true;
-			
-		}
-		
-		return false;
-	}
-	
-	/*
-	 * Check if the hand has blackack
-     * @return	boolean	TRUE/FALSE
-     */
-	public boolean hasBlackJack(){
-		
-		if (this.value == 21){
 			
 			return true;
 			
