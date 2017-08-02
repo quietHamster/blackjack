@@ -12,6 +12,7 @@ public class Card {
 
 	private String rank = "";
 	private String suit = "";
+	private int orderInHand = 0; // base 1
 	private File image = null;
 	private int value = 0;
 	
@@ -77,7 +78,7 @@ public class Card {
 			
 			if(this.rank.equalsIgnoreCase("A")){
 				
-				this.value = 1;
+				this.value = 11; // at first, consider Ace has value 11
 				
 			} else {
 				
@@ -94,5 +95,25 @@ public class Card {
 	public int getValue(){
 		
 		return this.value;
+	}
+	
+	/*
+	 * Set card's order in hand
+	 * @impact int orderInHand
+	 */
+	public void setOrderInHand(int order){
+		
+		this.orderInHand = order;
+		
+	}
+	
+	/*
+	 * Get card's order in hand. 
+	 * @return int orderInHand:	order, base 1
+	 */
+	public int getOrderInHand(){
+		
+		return this.orderInHand;
+		
 	}
 }
