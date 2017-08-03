@@ -36,6 +36,7 @@ public class Hand {
 	 * Set isBusted value (TRUE/FALSE) depend on the hand value
      * @param	Card card:	one card object
      * @impact	File image:	image associated to a card
+     * 			int value:	value of the hand
      */
 	public void receiveCard(Card card){
 		
@@ -66,6 +67,17 @@ public class Hand {
 				
 			} 
 			
+			// check for SOFT Ace
+			
+			if(this.hasAtLeastOneAce()){ 
+				
+				if(this.value > 21){
+					
+					this.value -= (10 * this.countNumAces());
+					
+				}
+				
+			}
 			
 		}
 		
@@ -81,6 +93,35 @@ public class Hand {
 			this.isBusted = true;
 			
 		}
+		
+	}
+	
+	/*
+	 * Count number of Ace(s) in the hand
+     * @return	int numAces
+     */
+	private int countNumAces(){
+		
+		if(!this.hasAtLeastOneAce()){
+			
+			return 0;
+			
+		}
+		
+		int numAces = 0;
+		
+		for(Card card : this.cardList){
+			
+			if(card.getRank().equalsIgnoreCase("A")){
+				
+				
+				numAces++;
+				
+			}
+			
+		}
+		
+		return numAces;
 		
 	}
 	
@@ -128,11 +169,11 @@ public class Hand {
 	 * Check if the hand has at least one Ace card or not 
      * @return	boolean	TRUE/FALSE
      */
-	private boolean hasAtLeastOneAce(){
+	public boolean hasAtLeastOneAce(){
 		
 		for(Card c : this.cardList){
 			
-			if(c.getValue() == 1){
+			if(c.getRank().equalsIgnoreCase("A")){
 				
 				return true;
 				
