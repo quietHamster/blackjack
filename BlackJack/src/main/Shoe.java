@@ -1,6 +1,6 @@
 /*
  * @author	Quan Q. Phan
- * @date	5/26/2017
+ * @date	05/26/2017
  * @since	1.0
  */
 
@@ -84,12 +84,15 @@ public class Shoe {
 		// for each element in the rndVals array list
 		// match it with element in the original this.cardList
 		for(int rdvl = 0; rdvl < rndVals.size(); rdvl++){
+			
 			shuffledList.add(this.cardList.get(rndVals.get(rdvl) - 1));
+			
 		}
 		
 		// swap the original list to the shuffled list
 		this.cardList.clear();
 		this.cardList.addAll(shuffledList);
+		
 	}
 	
 	/*
@@ -106,9 +109,11 @@ public class Shoe {
 	 * @return Card card
 	 */
 	public Card getTopCard(){
+		
 		Card card = this.cardList.get(0);
 		this.cardList.remove(0);
 		return card;
+		
 	}
 	
 	/*
