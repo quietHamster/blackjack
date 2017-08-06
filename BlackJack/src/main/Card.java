@@ -1,6 +1,6 @@
 /*
  * @author	Quan Q. Phan
- * @date	5/25/2017
+ * @date	05/25/2017
  * @since	1.0
  */
 

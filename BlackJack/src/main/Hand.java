@@ -1,6 +1,6 @@
 /*
  * @author	Quan Q. Phan
- * @date	5/25/2017
+ * @date	05/25/2017
  * @since	1.0
  */
 
@@ -183,6 +183,24 @@ public class Hand {
 		return false;
 		
 	}
+	
+	/*
+	 * Check if the hand is splittable
+     * @return	boolean	TRUE/FALSE
+     */
+	public boolean isSpittable(){
+		
+		if(this.cardList.size() == 2 &&
+		   this.cardList.get(0).getRank().equalsIgnoreCase(this.cardList.get(1).getRank())){
+			
+			return true;
+			
+		}
+		
+		return false;
+		
+	}
+	
 	
 	/*
 	 * Check if needed to run Natural Check on the hand 

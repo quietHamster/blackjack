@@ -1,6 +1,6 @@
 /*
  * @author	Quan Q. Phan
- * @date	7/26/2017
+ * @date	07/26/2017
  * @since	1.0
  */
 
@@ -16,7 +16,7 @@ import main.Hand;
 public class TestHand {
 
 	@Test
-	public void bustedHandPlayer() {
+	public void busted_Player() {
 		
 		Hand hand = new Hand("Player");
 		
@@ -35,7 +35,7 @@ public class TestHand {
 	}
 	
 	@Test
-	public void notBustedHandPlayer() {
+	public void notBusted_Player() {
 		
 		Hand hand = new Hand("Player");
 		
@@ -50,19 +50,23 @@ public class TestHand {
 		hand.receiveCard(c4);
 		
 		// this hand is NOT BUSTED
-		// expected the return is TRUE
+		// expected the return is FALSE
 		assertFalse(hand.isBusted()); 
 		
 	}
 	
 	@Test
-	public void hasAtLeastOneAceHandPlayer() {
+	public void hasAtLeastOneAce_Player() {
 		
 		Hand hand = new Hand("Player");
 		
-		Card c1 = new Card("A","S");
+		Card c1 = new Card("10","D");
+		Card c2 = new Card("A","S");
+		Card c3 = new Card("7","H");
 		
 		hand.receiveCard(c1);
+		hand.receiveCard(c2);
+		hand.receiveCard(c3);
 		
 		// this hand has ONE Ace
 		// expected the return is TRUE
@@ -71,7 +75,86 @@ public class TestHand {
 	}
 	
 	@Test
-	public void blackjackHandPlayer() {
+	public void hasMoreThanOneAce_Player() {
+		
+		Hand hand = new Hand("Player");
+		
+		Card c1 = new Card("10","D");
+		Card c2 = new Card("A","S");
+		Card c3 = new Card("A","H");
+		
+		hand.receiveCard(c1);
+		hand.receiveCard(c2);
+		hand.receiveCard(c3);
+		
+		// this hand has ONE Ace
+		// expected the return is TRUE
+		assertTrue(hand.hasAtLeastOneAce()); 
+		
+	}
+	
+	@Test
+	public void isSplittable_Player() {
+		
+		Hand hand = new Hand("Player");
+		
+		Card c1 = new Card("10","D");
+		Card c2 = new Card("10","S");
+		
+		hand.receiveCard(c1);
+		hand.receiveCard(c2);
+		
+		// this hand is splittable
+		// expected the return is TRUE
+		assertTrue(hand.isSpittable()); 
+		
+	}
+	
+	@Test
+	public void isNotSplittable_Player() {
+		
+		Hand hand = new Hand("Player");
+		
+		Card c1 = new Card("10","D");
+		Card c2 = new Card("10","S");
+		Card c3 = new Card("10","C");
+		
+		hand.receiveCard(c1);
+		hand.receiveCard(c2);
+		hand.receiveCard(c3);
+		
+		// this hand is NOT splittable
+		// expected the return is FALSE
+		assertFalse(hand.isSpittable()); 
+		
+	}
+	
+	@Test
+	public void hasNoAce_Player() {
+		
+		Hand hand = new Hand("Player");
+		
+		Card c1 = new Card("6","S");
+		Card c2 = new Card("3","S");
+		Card c3 = new Card("K","S");
+		Card c4 = new Card("J","C");
+		Card c5 = new Card("J","S");
+		
+		
+		hand.receiveCard(c1);
+		hand.receiveCard(c2);
+		hand.receiveCard(c3);
+		hand.receiveCard(c4);
+		hand.receiveCard(c5);
+		
+		// this hand has NO Ace
+		// expected the return is FALSE
+		assertFalse(hand.hasAtLeastOneAce()); 
+		
+	}
+	
+	@Test
+	public void blackjack_Player() {
 		
 		Hand hand = new Hand("Player");
 		
@@ -88,7 +171,7 @@ public class TestHand {
 	}
 	
 	@Test
-	public void noBlackjackHandPlayer() {
+	public void noBlackjack_Player() {
 		
 		Hand hand = new Hand("Player");
 		
