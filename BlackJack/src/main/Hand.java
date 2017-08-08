@@ -18,13 +18,13 @@ public class Hand {
 	
 	/*
 	 * Constructor.
-	 * @param	String actorName
+	 * @param	String role
 	 * @logic	determine if the hand is Dealer Hand or Player hand
 	 * 			because the counting mechanism is different
 	 */
-	public Hand(String actorName){
+	public Hand(String role){
 		
-		if(actorName.equalsIgnoreCase("DEALER")){
+		if(role.equalsIgnoreCase("DEALER")){
 			
 			this.isDealer = true;
 		}

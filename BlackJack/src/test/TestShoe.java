@@ -11,7 +11,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import main.Card;
-import main.Hand;
 import main.Shoe;
 
 public class TestShoe {

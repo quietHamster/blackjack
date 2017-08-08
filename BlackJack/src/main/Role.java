@@ -13,6 +13,7 @@ public class Role {
 	private String name = null;
 	private ArrayList<Hand> handList = new ArrayList<Hand>();
 	private double bank = 0.0;
+	private Hand hand = null;
 	
 	public Role(){
 		
@@ -66,6 +67,16 @@ public class Role {
 	public ArrayList<Hand> getHandList(){
 		
 		return this.handList;
+		
+	}
+	
+	/*
+	 * Initialize one hand
+	 * @impact this.hand
+	 */
+	public void initializeOneHand(){
+		
+		this.hand = new Hand(this.name);
 		
 	}
 }
