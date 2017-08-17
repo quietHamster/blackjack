@@ -79,4 +79,14 @@ public class Role {
 		this.hand = new Hand(this.name);
 		
 	}
+	
+	/*
+	 * Get current hand
+	 * @return Hand hand
+	 */
+	public Hand getHand(){
+		
+		return this.hand;
+		
+	}
 }
