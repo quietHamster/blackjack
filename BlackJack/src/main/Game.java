@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Game {
 	
-	private ArrayList<Role> playersList = null;
+	private ArrayList<Role> playersList = new ArrayList<Role>();
 	private boolean isCompleted = false;
 	private Shoe shoe = null;
 	private Role dealer = null;
@@ -26,6 +26,8 @@ public class Game {
 			playersList.add(player);
 			
 		}
+		
+		this.dealer = new Role();
 		
 	}
 

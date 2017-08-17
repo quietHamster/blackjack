@@ -27,9 +27,40 @@ public class Application {
 			
 			Card card = game.dealOneCard();
 			
-			player1.
+			player1.initializeOneHand();
 			
+			Hand p1Hand = player1.getHand();
 			
+			// player1 get FIRST card
+			p1Hand.receiveCard(card);
+			
+			card = game.dealOneCard();
+
+			dealer.initializeOneHand();
+			
+			Hand dealerHand = dealer.getHand();
+			
+			// dealer get FIRST card
+			dealerHand.receiveCard(card);
+			
+			card = game.dealOneCard();
+
+			// player1 get SECOND card
+			p1Hand.receiveCard(card);
+						
+			card = game.dealOneCard();
+			
+			// dealer get SECOND card
+			dealerHand.receiveCard(card);
+			
+			// player1 show all cards FACE UP
+			p1Hand.showCardFaceUp();
+			
+			// dealer show ONE card FACE UP, ONE card FACE DOWN
+			dealerHand.showCardFaceUpFaceDown();
+			
+			// check Dealer Hand if it has a natural
+			if()
 			
 		}
 	}

@@ -1,0 +1,11 @@
+source:
+http://www.bicyclecards.com/how-to-play/blackjack/
+https://wizardofodds.com/games/blackjack/basics/
+
+1) Purpose of the Game
+
+	- The object of blackjack is "to beat the dealer".
+	- To beat the dealer the player must:
+		+ First: not bust (go over 21)
+		+ Second: either outscore the dealer or have the dealer bust. 
+		

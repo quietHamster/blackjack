@@ -24,7 +24,7 @@ public class Hand {
 	 */
 	public Hand(String role){
 		
-		if(role.equalsIgnoreCase("DEALER")){
+		if(role.equalsIgnoreCase("Dealer")){
 			
 			this.isDealer = true;
 		}
@@ -235,8 +235,8 @@ public class Hand {
 		
 		for(int card = 0; card < this.cardList.size(); card++){
 			
-			System.out.print(" ".concat(this.cardList.get(card).getRank().
-								 concat(this.cardList.get(card).getSuit())));
+			System.out.print("\t[".concat(this.cardList.get(card).getRank().
+								 concat(this.cardList.get(card).getSuit().concat("]"))));
 			
 		}
 		
@@ -250,10 +250,10 @@ public class Hand {
      */
 	public void showCardFaceUpFaceDown(){
 		
-		System.out.print(" ".concat(this.cardList.get(0).getRank().
-				 concat(this.cardList.get(0).getSuit())));
+		System.out.print("\t[".concat(this.cardList.get(0).getRank().
+				 concat(this.cardList.get(0).getSuit().concat("]"))));
 		
-		System.out.print(" [-]");
+		System.out.print("\t[###]");
 		
 		System.out.println();
 		
