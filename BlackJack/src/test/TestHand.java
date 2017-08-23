@@ -189,6 +189,55 @@ public class TestHand {
 		
 	}
 
+	@Test
+	public void needCheckNaturalFirstCardNotAce_Dealer() {
+		
+		Hand hand = new Hand("Dealer");
+		
+		Card c1 = new Card("10","S");
+		Card c2 = new Card("3","H");
+		
+		hand.receiveCard(c1);
+		hand.receiveCard(c2);
+		
+		// this hand need to check natural
+		// expected the return is TRUE
+		assertTrue(hand.needCheckNatural()); 
+		
+	}
 	
+	@Test
+	public void needCheckNaturalFirstCardAce_Dealer() {
+		
+		Hand hand = new Hand("Dealer");
+		
+		Card c1 = new Card("A","S");
+		Card c2 = new Card("3","H");
+		
+		hand.receiveCard(c1);
+		hand.receiveCard(c2);
+		
+		// this hand need to check natural
+		// expected the return is TRUE
+		assertTrue(hand.needCheckNatural()); 
+		
+	}
+	
+	@Test
+	public void noNeedCheckNatural_Dealer() {
+		
+		Hand hand = new Hand("Dealer");
+		
+		Card c1 = new Card("8","S");
+		Card c2 = new Card("A","H");
+		
+		hand.receiveCard(c1);
+		hand.receiveCard(c2);
+		
+		// this hand does NOT need to check natural
+		// expected the return is FALSE
+		assertFalse(hand.needCheckNatural()); 
+		
+	}
 
 }

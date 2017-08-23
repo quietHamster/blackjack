@@ -6,7 +6,9 @@
 
 package main;
 
+import java.io.BufferedReader;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Game {
 	
@@ -77,6 +79,33 @@ public class Game {
 		
 		return this.playersList;
 		
+	}
+	
+	public boolean buyInsurance(){
+		
+		System.out.println("Do you want to buy insurance? (Y/N):\t");
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		String choice = scanner.next();
+		
+		while(!choice.equalsIgnoreCase("Y") && !choice.equalsIgnoreCase("N")){
+			
+			System.out.println("Do you want to buy insurance? (Y/N):\t");
+			choice = scanner.next();
+			
+		}
+		
+		scanner.close();
+		
+		if(choice.equalsIgnoreCase("Y")){
+			
+			return true;
+			
+		}
+		
+		return false;
+	
 	}
 	
 }
