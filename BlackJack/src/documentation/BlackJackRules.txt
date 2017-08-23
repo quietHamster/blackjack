@@ -9,3 +9,24 @@ https://wizardofodds.com/games/blackjack/basics/
 		+ First: not bust (go over 21)
 		+ Second: either outscore the dealer or have the dealer bust. 
 		
+2) Blackjack may be played with one to eight decks of 52-card decks. 
+
+	In this simulation, there are 8 decks of cards
+	
+3) Aces may be counted as 1 or 11 points, 2 to 9 according to face value, 
+
+	and tens and face cards count as ten points
+
+4) The value of a hand is the sum of the point values of the individual cards. 
+
+	Except, a "blackjack" is the highest hand, consisting of an ace and any 10-point card, 
+	and it outranks all other 21-point hands.
+
+5) After the players have bet, the dealer will give two cards to each player and two cards to himself. 
+
+	One of the dealer cards is dealt face up. The face-down card is called the "hole card."
+
+6) If the dealer has an ace showing, he will offer a side bet called "insurance." 
+
+	This side wager pays 2 to 1 if the dealer's hole card is any 10-point card. 
+	Insurance wagers are optional and may not exceed half the original wager.
