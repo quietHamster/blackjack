@@ -68,11 +68,13 @@ public class Application {
 				if(game.buyInsurance()){ // if player buy insurance
 					
 					
-				} else() { // if player not buy insurance
+				} 
+				/*
+				else() { // if player not buy insurance
 					
 					
 				}
-				
+				*/
 				
 				
 				// TODO
