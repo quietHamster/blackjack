@@ -71,7 +71,7 @@ public class Application {
 				} 
 				/*
 				else() { // if player not buy insurance
-					
+				// some checking here	
 					
 				}
 				*/
