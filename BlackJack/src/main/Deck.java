@@ -40,7 +40,7 @@ public class Deck {
 	}
 	
 	/*
-	 * Show all cards in a shoe
+	 * Show all cards in a deck
 	 * This method is for Testing purpose
      */
 	public void showAllCardsFaceUp(){
